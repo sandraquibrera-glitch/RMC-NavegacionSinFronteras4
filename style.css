@@ -100,6 +100,22 @@ article {
   font-size: clamp(1.35rem, 2.6vw, 2rem);
   line-height: 1.35;
 }
+/* PEGA ESTO AQUÍ, justo debajo de .lead */
+.grafica-seccion {
+  width: 100%;
+  padding: 0 0 5rem;
+}
+
+.grafica-embed {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+#observable-chart {
+  width: 100%;
+  max-width: 100%;
+}
 
 .modulo {
   margin: 2rem 0 5rem;
@@ -190,3 +206,23 @@ figcaption {
     min-height: 320px;
   }
 }
+  .grafica-embed {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#observable-chart {
+  width: 100%;
+  max-width: 100%;
+}
+
+.grafica-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 1150px;
+  border: 0;
+}
+
+

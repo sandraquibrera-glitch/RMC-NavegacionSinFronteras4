@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Titulo del articulo</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Título del artículo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+</head>
   <body>
     <header class="hero">
       <div class="hero-texto">
@@ -27,7 +28,13 @@
           <p>
             Después presenta el alcance de los datos: periodo, territorio, unidades de análisis y límites. Esta parte no debe sentirse como una ficha técnica aislada, sino como el marco de lectura del proyecto.
           </p>
-        </section>
+           </section>
+
+<section class="grafica-seccion">
+  <div class="grafica-embed">
+    <div id="observable-chart"></div>
+  </div>
+</section>
 
         <section class="modulo modulo-doble">
           <div>
@@ -118,5 +125,19 @@
         </section>
       </article>
     </main>
+    <script type="module">
+  import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/d/92df3b1f2d974f0d@148.js?v=4";
+
+  const target = document.querySelector("#observable-chart");
+
+  const main = new Runtime().module(define, (name) => {
+    if (name === "chart") {
+      return new Inspector(target);
+    }
+  });
+
+  main.redefine("width", target.getBoundingClientRect().width);
+</script>
   </body>
 </html>
