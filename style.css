@@ -132,16 +132,16 @@ article {
 }
 
 .modulo {
-  margin: 2rem 0 5rem;
-  padding: 4rem 0;
+  margin: 1.5rem 0 4.5rem;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--linea);
   border-bottom: 1px solid var(--linea);
 }
 
 .modulo-doble {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1fr);
-  gap: 3rem;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1.2fr);
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -162,7 +162,8 @@ h2 + p {
 
 .modulo p:not(.etiqueta) {
   margin-top: 1rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 figure {
@@ -202,9 +203,9 @@ figcaption {
 
 .destacado {
   display: grid;
-  grid-template-columns: minmax(180px, 0.35fr) minmax(260px, 1fr);
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  column-gap: 5rem;
+  align-items: start;
 }
 
 .cifra {
@@ -215,7 +216,23 @@ figcaption {
 }
 
 .cierre {
-  padding-bottom: 7rem;
+  padding-top: 0rem;
+  padding-bottom: 5.5rem;
+}
+
+.enlace-formulario {
+  color: var(--texto);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--linea);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.enlace-formulario:hover,
+.enlace-formulario:focus {
+  color: var(--acento);
+  text-decoration-color: var(--acento);
 }
 
 @media (max-width: 780px) {
