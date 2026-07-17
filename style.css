@@ -170,6 +170,44 @@ figure {
   margin: 0;
 }
 
+img[src*="Picture 17 años de ciencia"] {
+  display: block;
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+figure:has(img[src*="PictureFigurasClave"]) {
+  inline-size: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+figure:has(img[src*="PictureFigurasClave"]) img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+figure:has(img[src*="PictureFigurasClave"]) figcaption {
+  margin-top: 0.6rem;
+  contain: inline-size;
+}
+
+img[src*="Picture 17 años de ciencia"] {
+  display: block;
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
 .placeholder-viz {
   min-height: 420px;
   display: grid;
@@ -183,6 +221,7 @@ figure {
   color: var(--muted);
   font-weight: 700;
 }
+
 figcaption {
   margin-top: 0;
   color: var(--muted);
@@ -191,7 +230,6 @@ figcaption {
   text-transform: none;
   letter-spacing: 0;
   font-weight: 500;
-  max-width: 62ch;
 }
 
 .fuente-grafica {
@@ -203,9 +241,23 @@ figcaption {
 
 .destacado {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1.22fr);
-  column-gap: 4.25rem;
+  grid-template-columns: 260px minmax(0, 1fr);
+  column-gap: 3.25rem;
   align-items: start;
+}
+
+.destacado figure,
+.destacado .imagen,
+.destacado .media {
+  width: 260px;
+  margin: 0;
+}
+
+.destacado img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
 }
 
 .cifra {
@@ -221,18 +273,16 @@ figcaption {
 }
 
 .enlace-formulario {
-  color: var(--texto);
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: var(--linea);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
+  color: var(--acento);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .enlace-formulario:hover,
 .enlace-formulario:focus {
-  color: var(--acento);
-  text-decoration-color: var(--acento);
+  color: var(--acento-2);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 @media (max-width: 780px) {
@@ -245,6 +295,28 @@ figcaption {
   .modulo-doble.invertido,
   .destacado {
     grid-template-columns: 1fr;
+  }
+
+  .destacado img {
+    max-width: 100%;
+  }
+
+    .destacado {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .destacado figure,
+  .destacado .imagen,
+  .destacado .media,
+  .destacado img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  img[src*="PictureFigurasClave"],
+  img[src*="Picture 17 años de ciencia"] {
+    max-height: none;
   }
 
   .placeholder-viz {
